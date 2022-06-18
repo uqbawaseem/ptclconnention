@@ -18,7 +18,7 @@
     </div>
     <!-- navbar -->
     <?php include('_navbar.php');?>
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/internet_wires.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
@@ -107,15 +107,10 @@
               <p class="mb-4"><a href="#">+92345678910</a></p>
 
               <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">admin@trucknwork.com</a></p>
+              <p class="mb-0"><a href="#">admin@ptclconnection.com</a></p>
 
             </div>
             
-            <div class="p-4 mb-3 bg-white">
-              <h3 class="h5 text-black mb-3">More Info</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ad iure porro mollitia architecto hic consequuntur. Distinctio nisi perferendis dolore, ipsa consectetur? Fugiat quaerat eos qui, libero neque sed nulla.</p>
-            </div>
-
           </div>
         </div>
       </div>

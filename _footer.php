@@ -5,7 +5,7 @@
           <div class="col-md-12">
             <div class="border-top pt-5">
             <p>
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | TruckNwork</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | PtclConnection</a>
             </p>
             <center><a href="adminlogin.php">Admin</a></center>
             </div>
