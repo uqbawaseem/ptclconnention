@@ -48,7 +48,7 @@
                             echo "<td>".$p['name']."</td>";
                             echo "<td>".$p['email']."</td>";
                             echo "<td>".$p['password']."</td>";
-                            echo "<td><a href=\"edit-admin.php?id=$p[id]\" class= \"btn btn-secondary\"><i class=\"fa fa-edit\"></i></a> <br><br> <a href=\"admin-delete.php?id=$p[id]\"  class= \"btn btn-danger\" onClick=\"return confirm('Are you sure you want to delete?')\"><i class=\"fa fa-trash\" style=\"color:red;\"></i></a></td>";		         
+                            echo "<td><a href=\"edit-admin.php?id=$p[id]\" class= \"btn btn-secondary\">Edit</a> <br><br> <a href=\"admin-delete.php?id=$p[id]\"  class= \"btn btn-danger\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		         
                          }
                         ?>
                </tbody>

@@ -29,6 +29,7 @@
                   <td>Origin Address</td>
                   <td>Destination Address</td>
                   <td>Bill</td>
+                  <td>Total Amount</td>
                   <td>Bill Status</td>
                   <td>Action</td>
                </tr>
@@ -42,13 +43,25 @@
                       echo "<td>".$p['originAddress']."</td>";
                       echo "<td>".$p['destinationAddress']."</td>";
                       echo "<td>".$p['bill']."</td>";
+                      echo "<td>".$p['total_bill']."</td>";
                       echo "<td>".$p['bill_status']."</td>";
-                      echo "<td><a href=\"edit_trip.php?id=$p[id]\" class= \"btn btn-secondary\"><i class=\"fa fa-edit\"></i></a> <br><br> <a href=\"delete_trip.php?id=$p[id]\"  class= \"btn btn-danger\" onClick=\"return confirm('Are you sure you want to delete?')\"><i class=\"fa fa-trash\" style=\"color:red;\"></i></a></td>";		         
+                      echo "<td><a href=\"edit_trip.php?id=$p[id]\" class= \"btn btn-secondary\">Edit</a>
+                                  <br><br> 
+                                 <a href=\"delete_trip.php?id=$p[id]\"  class= \"btn btn-danger\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a><br><br>".
+                                    $trip_id = $p['id'];
+                                    $q="SELECT * FROM report where trip_id= $trip_id";
+                                    $trip = mysqli_query($connection,$q);
+                                    if($trip){
+                                       "<a href=\"report.php?id=$p[id]\" class= \"btn btn-info\">Print Report</a></td>";		         
+                                    }
+                                    else{
+                                       "<a href=\"report.php?id=$p[id]\" class= \"btn btn-info\">Generate Report</a></td>";		         
+                                    }
                    }
                   ?>
             </td>
             </tr>
-         </table>
+         </table> 
       </div>
       <!--======== SCRIPT FILES =========-->
       <script src="js/jquery.min.js"></script>
