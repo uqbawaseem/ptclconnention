@@ -104,7 +104,7 @@
               <div class="unit-4-icon mr-4"></div>
               <div>
                 <h3>Email: <?php echo $res['user_email'];?></h3>
-                <h3>Email: <?php echo $res['user_phone'];?></h3>
+                <h3>phone Number: <?php echo $res['user_phone'];?></h3>
                 <h3>Address: <h3>
                 <p style= "color: darkslateblue;">&nbsp;&nbsp;&nbsp; At- <?php echo ucwords($res['user_address'])?></p>
                 <p>Pakage fee Per Month: Rs/- <?php echo $res['pakage_fee'];?> <span style= "color: darkslateblue;"></span> &nbsp;&nbsp; <span style="color: grey; font-size: 14px;">pakage status : <?php echo $res['status'];?></span></p>
