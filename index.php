@@ -24,7 +24,7 @@
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
             <h1 class="text-white font-weight-light mb-5 text-uppercase font-weight-bold">PtclConnection Services</h1>
-            <p><a href="bookAtruck.php" class="btn btn-primary py-3 px-5 text-white">Book A truck</a></p>
+            <p><a href="new_internet_connection.php" class="btn btn-primary py-3 px-5 text-white">New Internet Connection</a></p>
 
           </div>
         </div>
@@ -41,7 +41,7 @@
             <h2 class="my-4 heading">Total Connections</h2>
             <h3>
               <?php 
-                  $query = "SELECT * FROM truck";
+                  $query = "SELECT * FROM internet_connection";
                   $result=mysqli_query($connection, $query); 
                   echo mysqli_num_rows($result);
                ?>
@@ -56,7 +56,7 @@
             <h2 class="my-4 heading  text-center">Available pakages</h2>
             <h3>
               <?php 
-                  $query = "SELECT * FROM trip";
+                  $query = "SELECT * FROM internet_pakage";
                   $result=mysqli_query($connection, $query); 
                   echo mysqli_num_rows($result);
                ?>
