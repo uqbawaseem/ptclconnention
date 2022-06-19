@@ -117,6 +117,19 @@
                   <?php } ?>
                </select>
             </div>
+            
+            <div class="col">
+               <div class="form-group">
+               <?php if(isset($_POST['submit'])) {
+                  $pakage_speed = mysqli_real_escape_string($connection, $_POST['pakage_speed']);
+                  $query = "SELECT pakage_fee from `internet_pakage` WHERE pakage_speed ='$pakage_speed'";
+                  $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+                  while($a = mysqli_fetch_array($result)){ 
+               ?>
+                  <input type="hidden" class="form-control" name="issue_date" placeholder="Issue date" value="<?php echo $a['pakage_fee'];?>">
+                  <?php }}?>
+               </div>
+            </div>   
             <div class="col">
                <div class="form-group">
                   <input type="hidden" class="form-control" name="issue_date" placeholder="Issue date" value="<?php echo date("Y/m/d");?>">

@@ -85,7 +85,7 @@
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center border-primary">
-            <h2 class="font-weight-light text-primary">Your Active Connections</h2>
+            <h2 class="font-weight-light text-primary">Your Requested Connections</h2>
           </div>
         </div>
         <div class="row align-items-stretch">
@@ -93,21 +93,21 @@
         if(isset($_SESSION['email'])){
         $user_email = $_SESSION['email'];
         
-        $query = "SELECT * FROM trip WHERE user_email = '$user_email'";
+        $query = "SELECT * FROM internet_connection WHERE user_email = '$user_email'";
         $freight=mysqli_query($connection, $query);
         while($res = mysqli_fetch_array($freight)){
           
         ?>
-          <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
+          <div class="col-md-6 col-lg-6 mb-4 mb-lg-4" style="-moz-box-shadow: 0 0 3px #ccc;-webkit-box-shadow: 0 3px 3px #ccc;box-shadow: 0 03px 3px #ccc;">
             <div class="unit-4 d-flex">
-            <h6>Connections id: <?php echo $res['id'];?></h6>
+            <h6>Connection id: <?php echo $res['id'];?></h6>
               <div class="unit-4-icon mr-4"></div>
               <div>
                 <h3>Email: <?php echo $res['user_email'];?></h3>
                 <h3>Email: <?php echo $res['user_phone'];?></h3>
-                <h3>Destination: <h3>
-                <p style= "color: darkslateblue;">&nbsp;&nbsp;&nbsp; From: -- <?php echo ucwords($res['originAddress'])." -- To -- ". ucwords($res['destinationAddress']);?></p>
-                <p>Bill: Rs/- <span style= "color: darkslateblue;"><?php echo $res['total_bill'];?></span> &nbsp;&nbsp; <span style="color: grey; font-size: 14px;"><?php echo $res['bill_status'];?></span></p>
+                <h3>Address: <h3>
+                <p style= "color: darkslateblue;">&nbsp;&nbsp;&nbsp; At- <?php echo ucwords($res['user_address'])?></p>
+                <p>Pakage fee Per Month: Rs/- <?php echo $res['pakage_fee'];?> <span style= "color: darkslateblue;"></span> &nbsp;&nbsp; <span style="color: grey; font-size: 14px;">pakage status : <?php echo $res['status'];?></span></p>
               </div>
             </div>
           </div>
