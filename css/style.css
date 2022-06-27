@@ -561,7 +561,8 @@ h1, h2, h3, h4, h5,
     width: 100%; }
   .site-blocks-cover, .site-blocks-cover .row {
     min-height: 600px;
-    height: calc(100vh); }
+   /* height: calc(100vh); */
+   } 
   .site-blocks-cover.inner-page-cover, .site-blocks-cover.inner-page-cover .row {
     min-height: 600px;
     height: calc(30vh); }
