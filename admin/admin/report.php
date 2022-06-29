@@ -253,31 +253,37 @@
                            <tr>
                               <td class="content-wrap aligncenter">
                                  <table width="100%" cellpadding="0" cellspacing="0">
-   
+                                 <?php
+                                    $id=isset($_GET['id']) ? $_GET['id'] : die("");
+                                    $result = mysqli_query($connection, "SELECT * FROM `internet_connection` WHERE id =$id");
+                                    
+                                        while($p = mysqli_fetch_array($result))
+                                        {
+                                        $id = $p['id'];
+                                        $user_email = $p['user_email'];
+                                        }
+                                        $invoice = mysqli_query($connection, "SELECT * FROM `invoice` WHERE `user_email`='$user_email'");
+                                        while($i = mysqli_fetch_array($invoice)){
+
+                                          $amount = $i['amount'];
+                                          $due_date = $i['due_date'];
+                                          $amount_after = $i['amount_after_due_date'];
+                                          $service_tax = $i['service_tax'];
+                                        }
+                                        
+                                    ?>
                                     <tbody>
                                        <tr>
                                           <td class="content-block">
+                                             <center>
                                              <h2>Thanks for using our app</h2>
+                                             </center>
                                           </td>
                                        </tr>
                                        <tr>
                                           <td class="content-block">
                                              <table class="invoice">
                                                 <tbody>
-                                                <?php
-                                                   $id=isset($_GET['id']) ? $_GET['id'] : die("");
-                                                   $result = mysqli_query($connection, "SELECT * FROM `invoice` WHERE id =$id");
-                                    
-                                                      while($p = mysqli_fetch_array($result))
-                                                      {
-                                                      $id = $p['id'];
-                                                      $user_email = $p['user_email'];
-                                                      $due_date = $p['due_date'];
-                                                      $service_tax  = $p['service_tax'];
-                                                      $amount_after_due_date = $p['amount_after_due_date'];
-                                                      $amount = $p['amount'];
-                                                      }
-                                                   ?>
                                                    <tr>
                                                       <td>User Email : <?php echo $user_email?><br>Report # <?php echo $id?><br>Date: <?php echo date("Y/m/d");?></td>
                                                    </tr>
@@ -287,18 +293,19 @@
                                                             <tbody>
                                                                <tr>
                                                                   <td>Service Tax</td>
-                                                                  <td class="alignright"><?php echo $service_tax?>rs/-</td>
+                                                                  <td class="alignright"><?php echo $service_tax?>PS/-</td>
                                                                </tr>
                                                                <tr>
                                                                   <td>Due Date</td>
                                                                   <td class="alignright"><?php echo $due_date?></td>
                                                                </tr>
                                                                <tr>
-                                                                  <td>Amount After Due Date</td>
-                                                                  <td class="alignright"><?php echo $amount_after_due_date?>RS/-</td>
+                                                                  <td>Amount after due date</td>
+                                                                  <td class="alignright"><?php echo $amount_after?>RS/-</td>
                                                                </tr>
+
                                                                <tr class="total">
-                                                                  <td class="alignright" width="80%">payable bill</td>
+                                                                  <td class="alignright" width="80%">Total</td>
                                                                   <td class="alignright"><?php echo $amount?>RS/-</td>
                                                                </tr>
                                                             </tbody>
@@ -311,7 +318,9 @@
                                        </tr>
                                        <tr>
                                           <td class="content-block">
-                                             ptclconnection.Inc. Virtual University of Pakistan
+                                             <center>
+                                             Ptclconnection.Inc. Virtual University of Pakistan
+                                             </center>
                                           </td>
                                        </tr>
                                     </tbody>
