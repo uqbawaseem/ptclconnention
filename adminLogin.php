@@ -18,13 +18,13 @@
            if (mysqli_fetch_assoc($result))
            {
              $_SESSION['name'] = $_POST['name'];
-             header('location:admin/index.php');
+             header('location:admin/admin/index.php');
            }
            else{
              echo "
              <div class=\"uk-alert-danger\" uk-alert>
              <a class=\"uk-alert-close\" uk-close></a>
-             <p>Please enter correct email and password. </p>
+             <p>Pleaqse enter correct email and password. </p>
          </div>";
            }
          }

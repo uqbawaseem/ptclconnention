@@ -3,7 +3,7 @@
     if(isset($_GET['logout']))
     {
         session_destroy();
-        header('location:../ptclconnection');
+        header('location:../../index.php');
     }
 
 ?>
