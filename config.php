@@ -1,5 +1,5 @@
 <?php
-    $Server = 'localhost:3308';
+    $Server = 'localhost';
     $UserName = 'root';
     $Password = '';
     $DatabaseName = 'ptcl_connection';
